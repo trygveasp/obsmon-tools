@@ -1,0 +1,17 @@
+[project]
+  name = "obsmontools"
+  version = "0.0.1"
+  description = "Tools to obsmon"
+  authors = [{name = "Trygve Aspelien"}]
+  license = "MIT"
+  license_files = []
+  repository = "https://github.com/trygveasp/obsmon-tools"
+  dependencies = [
+    "odc"
+  ]
+
+[tool.poetry.dependencies]
+  python = ">=3.10,<4.0"
+
+[tool.poetry.scripts]
+  odb2sqlite = "obsmontools.cli:odb2sqlite"

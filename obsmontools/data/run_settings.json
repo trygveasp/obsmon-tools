@@ -1,0 +1,22 @@
+
+{
+    "conv": [
+        "synop_z","synop_t2m", "synop_td2m", "synop_u10m", "synop_v10m", "synop_rh2m", "synop_snow",
+        "synop_apd", "ship_ps", "ship_z", "ship_t2m", "ship_td2m", "ship_u10m", "ship_v10m", "ship_rh2m",
+        "dribu_z", "spo_ps", "metar_z", "aircraft_t", "aircraft_u", "aircraft_v",
+        "temp_t", "temp_u", "temp_v", "temp_q", "limb",
+        "pilot_u", "pilot_v"
+    ],
+    "amv": [
+        "amv_u", "amv_v"
+    ],
+    "mwrad": [
+        "amsua", "amsub", "mhs", "mwhs2", "atms"
+    ],
+    "irrad": [
+        "iasi", "cris_npp", "cris_noaa", "seviri"
+    ],
+    "scatt": [
+        "scatt_u10m", "scatt_v10m"
+    ]
+}

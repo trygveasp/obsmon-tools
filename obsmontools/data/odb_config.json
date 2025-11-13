@@ -1,0 +1,474 @@
+{
+  "synop_z": {
+    "varnr": 1,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_t2m": {
+    "varnr": 39,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_td2m": {
+    "varnr": 40,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_u10m": {
+    "varnr": 41,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_v10m": {
+    "varnr": 42,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_rh2m": {
+    "varnr": 58,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_snow": {
+    "varnr": 92,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "synop_apd": {
+    "varnr": 128,
+    "codetypes": [
+      11,
+      12,
+      13,
+      14,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178
+    ]
+  },
+  "ship_ps": {
+    "varnr": 110,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "ship_z": {
+    "varnr": 1,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "ship_t2m": {
+    "varnr": 39,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "ship_td2m": {
+    "varnr": 40,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "ship_u10m": {
+    "varnr": 41,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "ship_v10m": {
+    "varnr": 42,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "ship_rh2m": {
+    "varnr": 58,
+    "codetypes": [
+      21,
+      22,
+      23,
+      24,
+      180,
+      181,
+      182,
+      183
+    ]
+  },
+  "dribu_z": {
+    "varnr": 1,
+    "codetypes": [
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      188,
+      189
+    ]
+  },
+  "spo_ps": {
+    "varnr": 110,
+    "codetypes": [
+      198
+    ]
+  },
+  "metar_z": {
+    "varnr": 1,
+    "codetypes": [
+      139,
+      140,
+      141
+    ]
+  },
+  "radarrh": {
+    "varnr": 29
+  },
+  "aircraft_t": {
+    "varnr": 2
+  },
+  "aircraft_u": {
+    "varnr": 3
+  },
+  "aircraft_v": {
+    "varnr": 4
+  },
+  "temp_t": {
+    "varnr": 2
+  },
+  "temp_u": {
+    "varnr": 3
+  },
+  "temp_v": {
+    "varnr": 5
+  },
+  "temp_q": {
+    "varnr": 7
+  },
+  "amv_u": {
+    "varnr": 3
+  },
+  "amv_v": {
+    "varnr": 4
+  },
+  "limb": {
+    "varnr": 162
+  },
+  "pilot_u": {
+    "varnr": 3
+  },
+  "pilot_v": {
+    "varnr": 4
+  },
+  "radarv": {
+    "varnr": 195
+  },
+  "radardbz": {
+    "varnr": 192
+  },
+  "scatt_u10m": {
+    "varnr": 124
+  },
+  "scatt_v10m": {
+    "varnr": 125
+  },
+  "amsua": {
+    "varnr": 119
+  },
+  "amsub": {
+    "varnr": 119
+  },
+  "mhs": {
+    "varnr": 119
+  },
+  "atms": {
+    "varnr": 119
+  },
+  "mwhs2": {
+    "varnr": 119
+  },
+  "iasi": {
+    "varnr": 119
+  },
+  "cris_npp": {
+    "varnr": 119
+  },
+  "cris_noaa": {
+    "varnr": 119
+  },
+  "seviri": {
+    "varnr": 119
+  },
+  "instrument_ids": {
+    "scatt": null,
+    "amsua": 3,
+    "amsub": 4,
+    "mhs": 15,
+    "iasi": 16,
+    "atms": 19,
+    "cris": 27,
+    "seviri": 29,
+    "mwhs2": 73
+  },
+  "satelites": {
+    "noaa15": {
+      "id": 206,
+      "instruments": [
+        "amsua",
+        "amsub"
+      ]
+    },
+    "noaa16": {
+      "id": 207,
+      "instruments": [
+        "amsua",
+        "amsub"
+      ]
+    },
+    "noaa17": {
+      "id": 208,
+      "instruments": [
+        "amsua",
+        "amsub"
+      ]
+    },
+    "noaa18": {
+      "id": 209,
+      "instruments": [
+        "amsua",
+        "amsub"
+      ]
+    },
+    "noaa19": {
+      "id": 223,
+      "instruments": [
+        "amsua",
+        "mhs"
+      ]
+    },
+    "npp": {
+      "id": 224,
+      "instruments": [
+        "atms",
+        "cris"
+      ]
+    },
+    "noaa20": {
+      "id": 225,
+      "instruments": [
+        "atms",
+        "cris"
+      ]
+    },
+    "noaa21": {
+      "id": 226,
+      "instruments": [
+        "atms",
+        "cris"
+      ]
+    },
+    "metop1": {
+      "id": 3,
+      "instruments": [
+        "amsua",
+        "mhs",
+        "iasi",
+        "scatt"
+      ]
+    },
+    "metop2": {
+      "id": 4,
+      "instruments": [
+        "amsua",
+        "mhs",
+        "iasi",
+        "scatt"
+      ]
+    },
+    "metop3": {
+      "id": 5,
+      "instruments": [
+        "amsua",
+        "mhs",
+        "iasi",
+        "scatt"
+      ]
+    },
+    "meteosat9": {
+      "id": 56,
+      "instruments": [
+        "seviri"
+      ]
+    },
+    "meteosat10": {
+      "id": 57,
+      "instruments": [
+        "seviri"
+      ]
+    },
+    "meteosat11": {
+      "id": 70,
+      "instruments": [
+        "seviri"
+      ]
+    },
+    "fy3c": {
+      "id": 522,
+      "instruments": [
+        "mwhs2"
+      ]
+    },
+    "fy3d": {
+      "id": 523,
+      "instruments": [
+        "mwhs2"
+      ]
+    },
+    "fy3e": {
+      "id": 524,
+      "instruments": [
+        "mwhs2"
+      ]
+    }
+  }
+}

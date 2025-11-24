@@ -4,7 +4,6 @@
   description = "Tools to obsmon"
   authors = [{name = "Trygve Aspelien"}]
   license = "MIT"
-  repository = "https://github.com/trygveasp/obsmon-tools"
   dependencies = [
     "odc"
   ]

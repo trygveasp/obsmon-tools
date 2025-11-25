@@ -1,5 +1,5 @@
 [virtualenvs]
-create = true
-in-project = true
+create = false
+in-project = false
 [virtualenvs.options]
 system-site-packages = true

@@ -5,7 +5,7 @@
   authors = [{name = "Trygve Aspelien"}]
   license = "MIT"
   dependencies = [
-    "odc"
+    "pyodc"
   ]
 
 [tool.poetry.dependencies]
@@ -13,3 +13,7 @@
 
 [project.scripts]
   odb2sqlite = "obsmontools.cli:odb2sqlite"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

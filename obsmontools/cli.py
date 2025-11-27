@@ -1,25 +1,24 @@
 """Command line interface"""
+import os
 import sys
-import pandas as pd
 import json
 import argparse
+from contextlib import suppress
+import pandas as pd
 
 from .odb import get_odb_data_from_file, ODBObsmonData, ODBObsmonVariable
 from .obsmon import write_obsmon_sqlite_file, ObsmonVariable
 
 
-'''
-odb2sqlite \
- --run-settings /nobackup/forsk/sm_tryas/git/obsmon-tools/obsmontools/data/run_settings.json \
- --obsmon-config /nobackup/forsk/sm_tryas/git/obsmon-tools/obsmontools/data/obsmon_config.json \
- --odb-config /nobackup/forsk/sm_tryas/git/obsmon-tools/obsmontools/data/odb_config.json \
- --datapath /nobackup/forsk/sm_tryas/harmonie/odb2_in_aa/archive/2025/11/05/12 \
- --suffix mfb \
- --dtg 2025110912 \
- --output ccma.db
-'''
-
 def cmd_args_odb2sqlite(argv):
+    """Get arguments for command
+
+    Args:
+        argv (list): Input arguments
+
+    Returns:
+       dict: Parser settings
+    """
 
     parser = argparse.ArgumentParser("odb2sqlite")
     parser.add_argument("--run-settings", dest="run_settings", type=str)
@@ -42,6 +41,12 @@ def cmd_args_odb2sqlite(argv):
 
 
 def odb2sqlite(argv=None):
+    """Get arguments for command
+
+            Args:
+        argv (list): Input arguments
+    """
+
     if argv is None:
         argv = sys.argv[1:]
 
@@ -54,7 +59,6 @@ def odb2sqlite(argv=None):
     suffix = kwargs["suffix"]
     dtg = kwargs["dtg"]
     output_file = kwargs["output"]
-    
 
     obsmon_data = None
     obsmon_vars = []
@@ -69,7 +73,12 @@ def odb2sqlite(argv=None):
     for base in data:
         odb_file = f"{datapath}/{base}.{suffix}"
         print(f"Opening {odb_file}")
-        odb_data = get_odb_data_from_file(odb_file)
+
+        if os.path.exists(odb_file) and os.path.getsize(odb_file) > 0:
+            odb_data = get_odb_data_from_file(odb_file)
+        else:
+            print(f"File {odb_file} is missing or empty")
+            break
 
         for var in data[base]:
             varname = config[var]["varname"]
@@ -77,21 +86,21 @@ def odb2sqlite(argv=None):
             obname = config[var]["obname"]
             try:
                 satelites = config[var]["satelites"]
-            except:
+            except KeyError:
                 satelites = ["undefined"]
             levels = [0]
-            try:
+            with suppress(KeyError):
                 levels = config[var]["channels"]
-            except:
-                pass
-            try:
+            with suppress(KeyError):
                 levels = config[var]["levels"]
-            except:
-                pass
+
             print(base, varname, obnumber, obname, satelites, levels)
             for satelite in satelites:
                 for level in levels:
-                    obvar = ODBObsmonVariable(var, varname, obnumber, obname, base, satname=satelite, level=level)#, instrument=instrument)
+                    obvar = ODBObsmonVariable(
+                        var, varname, obnumber, obname, base,
+                        satname=satelite, level=level
+                    )
                     obsmon_data2 = ODBObsmonData(odb_config, obvar).get_view(odb_data)
                     if obsmon_data is None:
                         obsmon_data = obsmon_data2
@@ -99,10 +108,16 @@ def odb2sqlite(argv=None):
                         obsmon_data = pd.concat([obsmon_data, obsmon_data2])
                     obsmon_vars.append(obvar)
 
-    write_obsmon_sqlite_file(obsmon_data, obsmon_vars, dtg, output_file)
+    if obsmon_data is not None:
+        write_obsmon_sqlite_file(obsmon_data, obsmon_vars, dtg, output_file)
 
 
 def cmd_args_json2sqlite(argv):
+    """Get arguments for command
+
+    Args:
+        argv (list): Input arguments
+    """
 
     parser = argparse.ArgumentParser("json2sqlite")
     parser.add_argument("--qc-file", dest="qc_file", type=str)
@@ -122,6 +137,12 @@ def cmd_args_json2sqlite(argv):
 
 
 def json2sqlite(argv=None):
+    """Get arguments for command
+
+    Args:
+        argv (list, optional): Input arguments. Default to None
+    """
+
     if argv is None:
         argv = sys.argv[1:]
     

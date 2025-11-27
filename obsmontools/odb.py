@@ -28,11 +28,12 @@ class ODBObsmonData():
         self.obstype = self.obsmon_variable.obnumber
         self.level = self.obsmon_variable.level
         self.satname = self.obsmon_variable.satname
-        self.instrument =  self.obsmon_variable.instrument
+        self.instrument = self.obsmon_variable.instrument
         self.channel = self.obsmon_variable.level
         self.instrument_id = self.get_instrument_id()
         self.satelite_id = self.get_satelite_id()
         self.missing = -1e36
+        self.passive = False
 
     def get_view(self, df_decoded):
         if self.view == "conv":
@@ -90,7 +91,7 @@ class ODBObsmonData():
     def get_instrument_id(self):
         if self.satname == "undefined" or self.instrument is None:
             return None
-        if not self.instrument in self.config["satelites"][self.satname]["instruments"]:
+        if self.instrument not in self.config["satelites"][self.satname]["instruments"]:
             raise RuntimeError("Instrument is not on board this satelite?")
         return self.config["instrument_ids"][self.instrument]
 
@@ -180,11 +181,11 @@ class ODBObsmonData():
             (df_decoded["varno@body"] == self.varno) &
             (df_decoded["an_depar@body"] > self.missing)
         ]
-        
+
         if self.satelite_id is not None:
             observations = df_decoded[
                 (df_decoded["satellite_identifier@sat"] == self.satelite_id)
-        ]
+            ]
         osize = len(observations)
         extra = {
             "biascrl": [0.0 for i in range(0,osize)],
@@ -207,6 +208,7 @@ class ODBObsmonData():
                 (df_decoded["codetype@hdr"].isin(self.codetypes))
             ]
         return observations
+
 
 def get_odb_data_from_file(odb_file):
     df_decoded = odc.read_odb(odb_file, single=True)
